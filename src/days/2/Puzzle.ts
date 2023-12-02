@@ -22,7 +22,7 @@ const first = (input: string) => {
 			.split(": ")[1]
 			.split("; ")
 			.map((item) => {
-				let cubeObj: CubeCount = {
+				const cubeObj: CubeCount = {
 					red: 0,
 					green: 0,
 					blue: 0,
@@ -34,24 +34,15 @@ const first = (input: string) => {
 						const num = parseInt(cube.split(" ")[0])
 
 						if (cube.includes("red")) {
-							cubeObj = {
-								...cubeObj,
-								red: cubeObj.red + num,
-							}
+							cubeObj.red = cubeObj.red + num
 						}
 
 						if (cube.includes("green")) {
-							cubeObj = {
-								...cubeObj,
-								green: cubeObj.green + num,
-							}
+							cubeObj.green = cubeObj.green + num
 						}
 
 						if (cube.includes("blue")) {
-							cubeObj = {
-								...cubeObj,
-								blue: cubeObj.blue + num,
-							}
+							cubeObj.blue = cubeObj.blue + num
 						}
 					})
 
@@ -66,7 +57,7 @@ const first = (input: string) => {
 
 		if (isValid) validGames.push(i + 1)
 	}
-	console.log(validGames)
+
 	const sum = validGames.reduce((acc, curr) => acc + curr, 0)
 
 	return sum
@@ -80,7 +71,7 @@ const second = (input: string) => {
 	const gamePower: number[] = []
 
 	for (let i = 0; i < games.length; i++) {
-		let maxCount: CubeCount = {
+		const maxCount: CubeCount = {
 			red: 0,
 			green: 0,
 			blue: 0,
@@ -90,7 +81,7 @@ const second = (input: string) => {
 			.split(": ")[1]
 			.split("; ")
 			.map((item) => {
-				let cubeObj: CubeCount = {
+				const cubeObj: CubeCount = {
 					red: 0,
 					green: 0,
 					blue: 0,
@@ -102,24 +93,13 @@ const second = (input: string) => {
 						const num = parseInt(cube.split(" ")[0])
 
 						if (cube.includes("red")) {
-							cubeObj = {
-								...cubeObj,
-								red: cubeObj.red + num,
-							}
+							cubeObj.red = cubeObj.red + num
 						}
-
 						if (cube.includes("green")) {
-							cubeObj = {
-								...cubeObj,
-								green: cubeObj.green + num,
-							}
+							cubeObj.green = cubeObj.green + num
 						}
-
 						if (cube.includes("blue")) {
-							cubeObj = {
-								...cubeObj,
-								blue: cubeObj.blue + num,
-							}
+							cubeObj.blue = cubeObj.blue + num
 						}
 					})
 
@@ -128,20 +108,20 @@ const second = (input: string) => {
 
 		for (const set of sets) {
 			if (set.red > maxCount.red) {
-				maxCount = { ...maxCount, red: set.red }
+				maxCount.red = set.red
 			}
 			if (set.blue > maxCount.blue) {
-				maxCount = { ...maxCount, blue: set.blue }
+				maxCount.blue = set.blue
 			}
 			if (set.green > maxCount.green) {
-				maxCount = { ...maxCount, green: set.green }
+				maxCount.green = set.green
 			}
 		}
 
 		const power = maxCount.red * maxCount.green * maxCount.blue
 		gamePower.push(power)
 	}
-	console.log(gamePower)
+
 	const sum = gamePower.reduce((acc, curr) => acc + curr, 0)
 
 	return sum
