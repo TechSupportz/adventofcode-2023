@@ -16,7 +16,7 @@ describe('AoC test runner', () => {
       try {
         const puzzlePath = `src/days/${puzzleName}`;
         exampleOneInput = await readFile(`${puzzlePath}/example-1.txt`);
-        exampleTwoInput = await readFile(`${puzzlePath}/example-1.txt`);
+        exampleTwoInput = await readFile(`${puzzlePath}/example-2.txt`);
       } catch (error) {
         console.error(error);
         process.exit(1);
