@@ -16,7 +16,7 @@ const first = (input: string) => {
 	return sum
 }
 
-const expectedFirstSolution = 54390
+const expectedFirstSolution = 142
 
 const second = (input: string) => {
 	const calValues = input.split("\n")
@@ -143,6 +143,6 @@ const second = (input: string) => {
 	return sum
 }
 
-const expectedSecondSolution = 54277
+const expectedSecondSolution = 281
 
 export { first, expectedFirstSolution, second, expectedSecondSolution }
