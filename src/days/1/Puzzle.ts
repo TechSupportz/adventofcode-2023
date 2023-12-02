@@ -131,7 +131,6 @@ const second = (input: string) => {
 			}
 		}
 
-		console.log(`${value} <<<`, digits)
 		if (digits.length === 0) continue
 
 		const number = parseInt(`${digits[0]}${digits.at(-1)}`)

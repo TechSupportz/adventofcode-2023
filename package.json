@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "bun src/index.ts",
     "build": "rm -rf dist && tsc",
-    "test": "vitest",
+    "test": "vitest --watch",
     "start": "node dist/index.js",
     "init-day": "bun src/scripts/initNewDay/initNewDay.ts",
     "lint": "eslint src",
