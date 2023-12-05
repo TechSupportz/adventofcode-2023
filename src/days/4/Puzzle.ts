@@ -53,7 +53,7 @@ const second = (input: string) => {
 		cardCount[`Card ${num}`] = 1
 	}
 
-	console.log(cardCount)
+	// console.log(cardCount)
 
 	for (const [index, card] of cards.entries()) {
 		const winning = card[0]
@@ -73,7 +73,7 @@ const second = (input: string) => {
 		}
 	}
 
-	console.log(cardCount)
+	// console.log(cardCount)
 
 	return Object.values(cardCount).reduce((acc, curr) => acc + curr, 0)
 }
